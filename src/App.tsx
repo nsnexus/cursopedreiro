@@ -19,6 +19,7 @@ import { auth, db, firebaseConfigured } from './firebase'
 import { lessons, modules, type Lesson } from './data/lessons'
 import { bonuses } from './data/bonuses'
 import { offers } from './data/offers'
+import SalesPage from './SalesPage'
 
 type Tab = 'aulas' | 'bonus' | 'ofertas'
 
@@ -35,6 +36,7 @@ const moduleIcons: Record<string, string> = {
 }
 
 function App() {
+  if (location.pathname !== '/alunos') return <SalesPage />
   const [user, setUser] = useState<User | null>(null)
   const [authLoading, setAuthLoading] = useState(true)
   const [access, setAccess] = useState<AccessState>('checking')
@@ -336,6 +338,7 @@ function AuthScreen() {
 
   return (
     <div className="auth-page">
+      <a href="/" className="auth-back-link">← Voltar para o curso</a>
       <div className="auth-panel brand-panel">
         <span className="eyebrow">🧱 CURSO PEDREIRO RESIDENCIAL</span>
         <h1>Aprenda no seu ritmo, direto da obra.</h1>

@@ -1,5 +1,7 @@
 # Curso Pedreiro Pro — versão protegida
 
+O domínio raiz do site é uma página pública de apresentação e vendas. A área privada dos alunos fica em `/alunos`. Enquanto `VITE_COURSE_CHECKOUT_URL` não estiver configurada, o botão principal apresenta o conteúdo do curso; quando houver um checkout oficial, defina a variável no build do Cloudflare para ligar os botões de matrícula a ele.
+
 Reconstrução da área de membros em React + Vite para deploy no Cloudflare Pages, com Firebase Auth/Firestore e Pages Functions.
 
 A lista pública do curso tem 71 aulas. Nesta versão os 71 IDs do YouTube **não entram no bundle do navegador**. Eles ficam em `../videos-pedreiro-secret.json`, arquivo ignorado pelo Git, e devem ser enviados ao Cloudflare como o secret `VIDEO_CATALOG_JSON`. O aluno autenticado recebe somente o ID da aula que abriu.

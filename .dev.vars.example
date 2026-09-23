@@ -1,0 +1,5 @@
+# Usado apenas pelo Pages Function /api/lesson/* em desenvolvimento local.
+# NÃO suba .dev.vars no Git.
+FIREBASE_API_KEY="COLE_AQUI"
+FIREBASE_PROJECT_ID="seu-projeto"
+VIDEO_CATALOG_JSON='{"aula-01":"ID_YOUTUBE"}'

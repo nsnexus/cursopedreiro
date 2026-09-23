@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function activeStudent() {
+      return signedIn() && get(/databases/$(database)/documents/access/$(request.auth.uid)).data.active == true;
+    }
+
+    match /access/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /users/{uid}/progress/{lessonId} {
+      allow read, delete: if activeStudent() && request.auth.uid == uid;
+      allow create, update: if activeStudent() && request.auth.uid == uid
+        && lessonId.matches('aula-(0[1-9]|[1-6][0-9]|7[01])')
+        && request.resource.data.keys().hasOnly(['completed', 'updatedAt'])
+        && request.resource.data.completed is bool
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    match /suggestions/{suggestionId} {
+      allow create: if activeStudent()
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'contact', 'text', 'createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() <= 200
+        && request.resource.data.contact is string
+        && request.resource.data.contact.size() <= 320
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.text is string
+        && request.resource.data.text.size() >= 3
+        && request.resource.data.text.size() <= 1000;
+      allow read, update, delete: if false;
+    }
+  }
+}

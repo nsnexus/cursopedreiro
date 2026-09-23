@@ -44,12 +44,9 @@ export default function SalesPage() {
               <div className="sales-proof"><div className="avatar-stack"><i>🧱</i><i>📐</i><i>🔨</i></div><span><b>71 aulas organizadas</b><br />para acompanhar etapa por etapa</span></div>
             </div>
             <div className="sales-visual" aria-label="Ilustração de uma parede sendo construída">
-              <div className="visual-grid" />
+              <img className="sales-hero-photo" src="/images/pedreiro-masonry-hero.webp" alt="Pedreiro com capacete e luvas assentando tijolos em uma obra residencial" />
               <div className="visual-stamp"><span>APRENDA</span><b>FAZENDO</b><i>CURSO ONLINE · 2026</i></div>
-              <div className="brick-wall"><div className="wall-top" /><div className="brick-row row-a"><i/><i/><i/><i/></div><div className="brick-row row-b"><i/><i/><i/></div><div className="brick-row row-c"><i/><i/><i/><i/></div><div className="brick-row row-d"><i/><i/><i/></div><div className="brick-row row-e"><i/><i/><i/><i/></div><div className="brick-row row-f"><i/><i/><i/></div></div>
-              <div className="visual-tape"><span>PRUMO</span><b>✓</b><small>ALINHADO</small></div>
               <div className="visual-caption"><span>01 / 07</span><b>DA FUNDAÇÃO<br />AO ACABAMENTO</b></div>
-              <span className="visual-spark spark-one">✳</span><span className="visual-spark spark-two">✳</span>
             </div>
           </div>
           <div className="sales-hero-bottom"><span>UM CAMINHO CLARO PARA EVOLUIR NA OBRA</span><a href="#curso">Role para conhecer <b>↓</b></a><span>FEITO PARA QUEM QUER APRENDER FAZENDO</span></div>

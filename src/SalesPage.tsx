@@ -44,7 +44,7 @@ export default function SalesPage() {
               <div className="sales-proof"><span><b>Do básico ao acabamento</b><br />7 módulos, na ordem da obra</span></div>
             </div>
             <div className="sales-visual" aria-label="Pedreiro assentando tijolos em uma obra">
-              <img className="sales-hero-photo" src="/images/pedreiro-masonry-hero-v2.webp" alt="Pedreiro com capacete e luvas assentando tijolos em uma obra residencial" />
+              <img className="sales-hero-photo" src="/images/pedreiro-masonry-hero-v3.webp" alt="Pedreiro assentando tijolos em uma obra residencial" />
               <div className="visual-caption"><span>71 AULAS</span><b>DO BÁSICO AO<br />ACABAMENTO</b></div>
             </div>
           </div>
